@@ -2,6 +2,7 @@
 <html lang="ru">
   <head>
     <link rel="shortcut icon" href="./img/favicon.png" type="image/png" />
+    <link rel="stylesheet" href="./libs/hamburgers.css" />
     <link rel="stylesheet" href="./css/style.css" />
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -12,7 +13,9 @@
     <header class="header side-padding">
       <nav class="nav-bar side-padding">
         <div class="nav-bar__content container">
-          <img src="./img/logo.png" alt="Logotype" class="nav-bar__logo" />
+          <a href="#"
+            ><img src="./img/logo.png" alt="Logotype" class="nav-bar__logo"
+          /></a>
           <ul class="nav-bar__list">
             <li class="nav-bar__item">
               <a href="#" class="nav-bar__link">Навыки</a>
@@ -24,6 +27,20 @@
               <a href="#" class="nav-bar__link">Контакты</a>
             </li>
           </ul>
+
+          <div class="hamburger hamburger--minus">
+            <div class="hamburger-box">
+              <div class="hamburger-inner"></div>
+            </div>
+          </div>
+
+          <div class="nav-bar__hamburger-menu hamburger-menu">
+            <ul class="hamburger-menu__list">
+              <li class="hamburger-menu__item"><a href="#" class="hamburger-menu__link">Навыки</a></li>
+              <li class="hamburger-menu__item"><a href="#" class="hamburger-menu__link">Портфолио</a></li>
+              <li class="hamburger-menu__item"><a href="#" class="hamburger-menu__link">Контакты</a></li>
+            </ul>
+          </div>
         </div>
       </nav>
       <div class="header__container container">
@@ -37,10 +54,12 @@
         </div>
       </div>
     </header>
-    <main class="main"><a id="main"></a></main>
+    <main class="main"></main>
+    <footer class="footer"></footer>
     <script
       src="https://kit.fontawesome.com/373daff928.js"
       crossorigin="anonymous"
     ></script>
+    <script src="./js/main.js"></script>
   </body>
 </html>
