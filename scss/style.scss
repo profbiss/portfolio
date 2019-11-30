@@ -33,7 +33,6 @@ body {
   width: 100%;
   text-align: center;
   font-family: "Nunito";
-  font-size: 100%;
   line-height: 1;
   font-size: 16px;
   scroll-behavior: smooth;
@@ -115,18 +114,55 @@ $green: #1abc9c;
 
 /* ********** common styles ********** */
 
+
+/* ********** nav-bar styles ********** */
+
+.nav-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  &__content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 0;
+  }
+  &__logo {
+    min-width: 100px;
+    width: 100px;
+  }
+  &__list {
+    display: flex;
+  }
+  &__item {
+    margin-left: 30px;
+  }
+  &__link {
+    font-size: 18px;
+    color: #ffffff;
+    transition: 400ms;
+    &:hover {
+      color: $green;
+    }
+  }
+}
+
+/* ********** nav-bar styles ********** */
+
+
 /* ********** header styles ********** */
 
 .header {
   background: url("../img/header-bg.jpeg") 70% no-repeat;
   background-size: cover;
-  padding-bottom: 50px;
   &__container {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    padding-top: 200px;
+    padding: 200px 0;
     text-align: center;
     @media (min-width: $md) {
       flex-direction: row;
@@ -174,27 +210,10 @@ $green: #1abc9c;
   &__represent {
     color: #ffffff;
   }
-  &__link {
-    width: 60px;
-    height: 60px;
-    margin: 100px auto 0;
-    border: 1px solid #ffffff;
-    border-radius: 50%;
-    transition: 400ms;
-    &:hover {
-      transform: scale(1.2);
-      border: 1px solid $green;
-    }
-    &:hover .header__icon {
-      transform: scale(1.1);
-      color: $green;
-    }
-  }
-  &__icon {
-    color: #ffffff;
-    font-size: 20px;
-    transition: 400ms;
-  }
 }
 
 /* ********** header styles ********** */
+
+
+
+
