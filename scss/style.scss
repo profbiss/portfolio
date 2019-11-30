@@ -31,6 +31,7 @@ html,
 body {
   height: 100%;
   width: 100%;
+  text-align: center;
   font-family: 'Montserrat';
   font-size: 100%;
   line-height: 1;
@@ -87,4 +88,11 @@ h6 {
 /* ********** common styles ********** */
 
 /* ********** header styles ********** */
+
+.header {
+    background: url('../img/header-bg.jpeg') no-repeat;
+    background-size: cover;
+    padding-top: 250px;
+}
+
 /* ********** header styles ********** */
