@@ -88,15 +88,14 @@ $green: #1abc9c;
 
 /* ********** variables ********** */
 
-
 /* ********** common styles ********** */
 
 .side-padding {
   padding: 0 10px;
-  @media(min-width: $sm) {
+  @media (min-width: $sm) {
     padding: 0 20px;
   }
-  @media(min-width: $md) {
+  @media (min-width: $md) {
     padding: 0 40px;
   }
 }
@@ -112,8 +111,16 @@ $green: #1abc9c;
   align-items: center;
 }
 
-/* ********** common styles ********** */
+.fog {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+}
 
+/* ********** common styles ********** */
 
 /* ********** nav-bar styles ********** */
 
@@ -165,8 +172,21 @@ $green: #1abc9c;
 }
 
 .hamburger-menu {
+  overflow: hidden;
   &__list {
+    margin-top: -200px;
+    visibility: hidden;
     background-color: rgba(0, 0, 0, 0.5);
+    transition: 400ms;
+    opacity: 0;
+    &_is-visible {
+      margin-top: 0;
+      visibility: visible;
+      opacity: 1;
+      @media (min-width: $md) {
+        display: none;
+      }
+    }
   }
   &__item {
     padding-top: 10px;
@@ -193,7 +213,6 @@ $green: #1abc9c;
 }
 
 /* ********** nav-bar styles ********** */
-
 
 /* ********** header styles ********** */
 
@@ -236,7 +255,7 @@ $green: #1abc9c;
   }
   &__title {
     margin: 20px 0;
-    font-family: 'Nunito-Bold';
+    font-family: "Nunito-Bold";
     font-size: 30px;
     color: #ffffff;
     @media (min-width: 300px) and (max-width: 420px) {
@@ -256,7 +275,3 @@ $green: #1abc9c;
 }
 
 /* ********** header styles ********** */
-
-
-
-
