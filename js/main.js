@@ -29,7 +29,14 @@
 
     if (
       target.classList.contains("fog") ||
-      target.classList.contains("hamburger-menu__link") ||
+      target.classList.contains("hamburger-menu__link")
+    ) {
+      hamburgerBtn.classList.remove("is-active");
+      toggleHamburgerMenu();
+      screenFog();
+      return;
+    } else if (
+      document.querySelector("div").classList.contains("fog") &&
       target.classList.contains("nav-bar__logo")
     ) {
       hamburgerBtn.classList.remove("is-active");
