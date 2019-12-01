@@ -126,7 +126,7 @@ $green: #1abc9c;
 }
 
 .section-title:after {
-  content: '';
+  content: "";
   display: block;
   width: 300px;
   height: 2px;
@@ -160,7 +160,22 @@ $green: #1abc9c;
     }
   }
   &__item {
+    position: relative;
     margin-left: 30px;
+    &:before {
+      content: "";
+      position: absolute;
+      right: 0;
+      bottom: -25px;
+      width: 0;
+      height: 2px;
+      background-color: $green;
+      transition: 400ms;
+    }
+    &:hover:before {
+      left: 0;
+      width: 100%;
+    }
   }
   &__link {
     font-size: 18px;
@@ -289,16 +304,9 @@ $green: #1abc9c;
 
 /* ********** header styles ********** */
 
-
 /* ********** main styles ********** */
 /* ********** main styles ********** */
 
-
-
 /* ********** portfolio styles ********** */
 
-
-
 /* ********** portfolio styles ********** */
-
-
