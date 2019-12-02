@@ -85,6 +85,7 @@ $sm: 576px;
 $md: 768px;
 $lg: 992px;
 $green: #1abc9c;
+$fog: rgba(0, 0, 0, 0.5);
 
 /* ********** variables ********** */
 
@@ -117,7 +118,7 @@ $green: #1abc9c;
   right: 0;
   bottom: 0;
   left: 0;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: $fog;
 }
 
 .section-title {
@@ -146,7 +147,7 @@ $green: #1abc9c;
   top: 0;
   left: 0;
   right: 0;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: $fog;
   z-index: 3;
   &__content {
     display: flex;
@@ -209,7 +210,7 @@ $green: #1abc9c;
   &__list {
     margin-top: -200px;
     visibility: hidden;
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: $fog;
     transition: 400ms;
     opacity: 0;
     &_is-visible {
@@ -345,6 +346,23 @@ $green: #1abc9c;
       top: 70%;
       visibility: visible;
     }
+    &:hover .works__dark-card {
+      bottom: 100%;
+    }
+  }
+  &__dark-card {
+    position: absolute;
+    background-color: $fog;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: none;
+    z-index: 2;
+    @media (min-width: $md) {
+      display: block;
+      transition: 400ms;
+    }
   }
   &__img {
     width: 100%;
@@ -352,7 +370,7 @@ $green: #1abc9c;
   }
   &__desc {
     position: absolute;
-    top: 100%;
+    top: 70%;
     right: 0;
     bottom: 0;
     left: 0;
@@ -362,9 +380,12 @@ $green: #1abc9c;
     padding: 10px;
     font-size: 18px;
     color: #ffffff;
-    background-color: rgba(0, 0, 0, 0.5);
-    visibility: hidden;
+    background-color: $fog;
     transition: 400ms;
+    @media (min-width: $md) {
+      visibility: hidden;
+      top: 100%;
+    }
   }
 }
 
