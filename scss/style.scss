@@ -347,7 +347,8 @@ $fog: rgba(0, 0, 0, 0.5);
       visibility: visible;
     }
     &:hover .works__dark-card {
-      bottom: 100%;
+      background-color: transparent;
+      visibility: hidden;
     }
   }
   &__dark-card {
@@ -385,6 +386,9 @@ $fog: rgba(0, 0, 0, 0.5);
     @media (min-width: $md) {
       visibility: hidden;
       top: 100%;
+    }
+    &:hover {
+      color: $green;
     }
   }
 }
