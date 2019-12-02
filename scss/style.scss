@@ -345,7 +345,7 @@ $fog: rgba(0, 0, 0, 0.5);
     &:hover .works__img {
       transform: scale(1.2);
     }
-    &:hover .works__desc {
+    &:hover .works__btn-wrap {
       top: 70%;
       visibility: visible;
     }
@@ -372,7 +372,7 @@ $fog: rgba(0, 0, 0, 0.5);
     width: 100%;
     transition: 400ms;
   }
-  &__desc {
+  &__btn-wrap {
     position: absolute;
     top: 70%;
     right: 0;
@@ -381,9 +381,8 @@ $fog: rgba(0, 0, 0, 0.5);
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 10px;
+    padding: 40px;
     font-size: 18px;
-    color: #ffffff;
     background-color: $fog;
     transition: 400ms;
     @media (min-width: $md) {
@@ -392,6 +391,17 @@ $fog: rgba(0, 0, 0, 0.5);
     }
     &:hover {
       color: $green;
+    }
+  }
+  &__btn {
+    padding: 10px 15px;
+    color: #ffffff;
+    border: 2px solid $green;
+    border-radius: 4px;
+    background-color: $green;
+    transition: 400ms;
+    &:hover {
+      transform: scale(1.1);
     }
   }
 }
@@ -404,9 +414,12 @@ $fog: rgba(0, 0, 0, 0.5);
 .skills {
   &__card-box {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 20px;
     margin-top: 80px;
+    @media (min-width: 270px) {
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    }
   }
 }
 
