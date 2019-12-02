@@ -345,7 +345,7 @@ $fog: rgba(0, 0, 0, 0.5);
     &:hover .works__img {
       transform: scale(1.2);
     }
-    &:hover .works__btn-wrap {
+    &:hover .works__desc {
       top: 70%;
       visibility: visible;
     }
@@ -372,7 +372,7 @@ $fog: rgba(0, 0, 0, 0.5);
     width: 100%;
     transition: 400ms;
   }
-  &__btn-wrap {
+  &__desc {
     position: absolute;
     top: 70%;
     right: 0;
@@ -381,8 +381,9 @@ $fog: rgba(0, 0, 0, 0.5);
     display: flex;
     justify-content: center;
     align-items: center;
-    padding-top: 40px;
+    padding: 10px;
     font-size: 18px;
+    color: #ffffff;
     background-color: $fog;
     transition: 400ms;
     @media (min-width: $md) {
@@ -391,17 +392,6 @@ $fog: rgba(0, 0, 0, 0.5);
     }
     &:hover {
       color: $green;
-    }
-  }
-  &__btn {
-    padding: 10px 15px;
-    color: #ffffff;
-    border: 2px solid $green;
-    border-radius: 4px;
-    background-color: $green;
-    transition: 400ms;
-    &:hover {
-      transform: scale(1.1);
     }
   }
 }
