@@ -25,7 +25,10 @@
               <a href="#skills" class="nav-bar__link">Навыки</a>
             </li>
             <li class="nav-bar__item">
-              <a href="#" class="nav-bar__link">Контакты</a>
+              <a href="#connection" class="nav-bar__link">Обратная связь</a>
+            </li>
+            <li class="nav-bar__item">
+              <a href="#contacts" class="nav-bar__link">Контакты</a>
             </li>
           </ul>
 
@@ -46,7 +49,14 @@
                 <a href="#skills" class="hamburger-menu__link">Навыки</a>
               </li>
               <li class="hamburger-menu__item">
-                <a href="#" class="hamburger-menu__link">Контакты</a>
+                <a href="#connection" class="hamburger-menu__link"
+                  >Обратная связь</a
+                >
+              </li>
+              <li class="hamburger-menu__item">
+                <a href="#contacts" class="hamburger-menu__link"
+                  >Контакты</a
+                >
               </li>
             </ul>
           </div>
@@ -129,7 +139,8 @@
               <i class="skills-card__icon fab fa-html5"></i>
               <h3 class="skills-card__title">HTML5</h3>
               <p class="skills-card__desc">
-                Пишу валидный и семантический HTML-код с правильной структурой документа.
+                Пишу валидный и семантический HTML-код с правильной структурой
+                документа.
               </p>
             </div>
             <div class="skills__skills-card skills-card">
@@ -143,14 +154,16 @@
               <i class="skills-card__icon fab fa-js-square"></i>
               <h3 class="skills-card__title">JavaScript</h3>
               <p class="skills-card__desc">
-                Совершунствую и применяю познания языка JavaScript для придания интерактивности веб-страницам.
+                Совершунствую и применяю познания языка JavaScript для придания
+                интерактивности веб-страницам.
               </p>
             </div>
             <div class="skills__skills-card skills-card">
               <i class="skills-card__icon fab fa-sass"></i>
               <h3 class="skills-card__title">SASS</h3>
               <p class="skills-card__desc">
-                Использую препроцессор SASS для написания более читаемого и понятного кода.
+                Использую препроцессор SASS для написания более читаемого и
+                понятного кода.
               </p>
             </div>
             <div class="skills__skills-card skills-card">
@@ -164,7 +177,8 @@
               <i class="skills-card__icon fas fa-mobile-alt"></i>
               <h3 class="skills-card__title">Адаптивная вёрстка</h3>
               <p class="skills-card__desc">
-                Верстаю адаптивные веб-страницы при помощи Grid, Flexbox и медиа-запросов.
+                Верстаю адаптивные веб-страницы при помощи Grid, Flexbox и
+                медиа-запросов.
               </p>
             </div>
             <div class="skills__skills-card skills-card">
@@ -178,14 +192,77 @@
               <i class="skills-card__icon far fa-window-restore"></i>
               <h3 class="skills-card__title">Кроссбраузерность</h3>
               <p class="skills-card__desc">
-                Верстаю веб-страницы, оптимально отображаемые во всех современных браузерах.
+                Верстаю веб-страницы, оптимально отображаемые во всех
+                современных браузерах.
               </p>
             </div>
           </div>
         </div>
       </section>
+      <section class="main__contacts side-padding">
+        <div class="contacts container">
+          <a id="connection"></a>
+          <form action="#" class="contacts__form form">
+            <h3 class="form__title">Обратная связь</h3>
+            <input
+              type="text"
+              class="form__name"
+              placeholder="Ваше имя"
+              required
+            />
+            <input
+              type="email"
+              class="form__email"
+              placeholder="Ваш e-mail"
+              required
+            />
+            <input
+              type="text"
+              class="form__theme"
+              placeholder="Тема письма"
+              required
+            />
+            <textarea
+              class="form__textarea"
+              cols="30"
+              rows="10"
+              placeholder="Ваше сообщение"
+            ></textarea>
+            <button type="submit" class="form__btn">Отправить</button>
+          </form>
+        </div>
+      </section>
     </main>
-    <footer class="footer"></footer>
+    <footer class="footer side-padding">
+      <a id="contacts"></a>
+      <div class="footer__footer-content footer-contentcontainer">
+        <span class="footer-content__contacts">Контакты</span>
+        <ul class="footer-content__socials">
+          <li class="footer-content__item">
+            <a href="#" class="footer-content__link"
+              ><i class="fab fa-telegram"></i
+            ></a>
+          </li>
+          <li class="footer-content__item">
+            <a href="#" class="footer-content__link"
+              ><i class="fab fa-whatsapp"></i
+            ></a>
+          </li>
+          <li class="footer-content__item">
+            <a href="#" class="footer-content__link"
+              ><i class="fab fa-skype"></i
+            ></a>
+          </li>
+          <li class="footer-content__item">
+            <a href="#" class="footer-content__link"
+              ><i class="fas fa-envelope"></i
+            ></a>
+          </li>
+        </ul>
+        <span class="footer-content__email">darth.tesla47@gmail.com</span>
+        <span class="footer-content__city">Город: Санкт-Петербург</span>
+      </div>
+    </footer>
     <script
       src="https://kit.fontawesome.com/373daff928.js"
       crossorigin="anonymous"
