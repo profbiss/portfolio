@@ -96,3 +96,28 @@ function closeModal(el) {
 }
 
 /* ********** mailer menu ********** */
+
+/* ********** to-top button ********** */
+
+(function() {
+  function backToTop() {
+    const btn = $('.to-top');
+
+    $(window).on('scroll', () => {
+      if($(this).scrollTop() <= 400) {
+        btn.fadeOut();
+      } else {
+        btn.fadeIn();
+      }
+    });
+
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+      $('html').animate({scrollTop: 0}, 1000)
+    })
+  }
+
+  backToTop();
+})();
+
+/* ********** to-top button ********** */
