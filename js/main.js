@@ -20,7 +20,7 @@
   }
 
   function screenFog() {
-    document.querySelector("div").classList.toggle("fog");
+    document.querySelector(".fog").classList.toggle("menu-fog");
     return;
   }
 
@@ -28,7 +28,7 @@
     const target = el.target;
 
     if (
-      target.classList.contains("fog") ||
+      target.classList.contains("menu-fog") ||
       target.classList.contains("hamburger-menu__link")
     ) {
       hamburgerBtn.classList.remove("is-active");
@@ -36,7 +36,7 @@
       screenFog();
       return;
     } else if (
-      document.querySelector("div").classList.contains("fog") &&
+      document.querySelector("div").classList.contains("menu-fog") &&
       target.classList.contains("nav-bar__logo")
     ) {
       hamburgerBtn.classList.remove("is-active");
@@ -62,7 +62,7 @@ $(document).ready(function() {
       url: "mail.php", //Change
       data: th.serialize()
     }).done(function() {
-      alert("Thank you!");
+      showModal();
       setTimeout(function() {
         // Done Functions
         th.trigger("reset");
@@ -71,5 +71,23 @@ $(document).ready(function() {
     return false;
   });
 });
+
+const modal = document.querySelector(".modal");
+const modalFog = document.querySelector(".fog");
+
+function showModal() {
+  modal.classList.toggle(".modal_visible");
+  modalFog.classList.toggle(".modal-fog");
+  return;
+}
+
+document.addEventListener("click", closeModal);
+
+function closeModal() {
+  if (modal.classList.contains("modal_visible")) {
+    modal.classList.remove("modal_visible");
+    modalFog.classList.remove("modal-fog");
+  } else return console.log("fuck you");
+}
 
 /* ********** mailer menu ********** */
