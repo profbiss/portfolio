@@ -95,6 +95,4 @@ function closeModal(el) {
   } else return;
 }
 
-document.querySelector(".form__btn").addEventListener("click", showModal);
-
 /* ********** mailer menu ********** */
