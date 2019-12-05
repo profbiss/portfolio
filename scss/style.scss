@@ -408,11 +408,12 @@ $fog: rgba(0, 0, 0, 0.5);
     padding: 10px;
     font-size: 18px;
     color: #ffffff;
-    background-color: $fog;
+    background-color: #1b1b1b;
     transition: 400ms;
     @media (min-width: $md) {
-      visibility: hidden;
       top: 100%;
+      background-color: $fog;
+      visibility: hidden;
     }
     &:hover {
       color: $green;
