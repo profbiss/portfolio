@@ -76,18 +76,25 @@ const modal = document.querySelector(".modal");
 const modalFog = document.querySelector(".fog");
 
 function showModal() {
-  modal.classList.toggle(".modal_visible");
-  modalFog.classList.toggle(".modal-fog");
+  modal.classList.toggle("modal_visible");
+  modalFog.classList.toggle("modal-fog");
   return;
 }
 
 document.addEventListener("click", closeModal);
 
-function closeModal() {
-  if (modal.classList.contains("modal_visible")) {
+function closeModal(el) {
+  const target = el.target;
+
+  if (
+    target.classList.contains("modal_visible") ||
+    target.classList.contains("modal-fog")
+  ) {
     modal.classList.remove("modal_visible");
     modalFog.classList.remove("modal-fog");
-  } else return console.log("fuck you");
+  } else return;
 }
+
+document.querySelector(".form__btn").addEventListener("click", showModal);
 
 /* ********** mailer menu ********** */
