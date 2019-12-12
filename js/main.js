@@ -1,3 +1,19 @@
+/* ********** preloader ********** */
+
+(function() {
+  document.body.onload = () => {
+    setTimeout(() => {
+      const preloader = document.querySelector('.preloader');
+      if(!preloader.classList.contains('done')) {
+        return preloader.classList.add('done')
+      }
+    }, 1000)
+  }
+})();
+
+/* ********** preloader ********** */
+
+
 /* ********** hamburger menu ********** */
 
 (function() {
@@ -123,3 +139,5 @@ function closeModal(el) {
 })();
 
 /* ********** to-top button ********** */
+
+
