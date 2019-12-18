@@ -162,6 +162,7 @@ $fog: rgba(0, 0, 0, 0.5);
   background-color: #1abc9c99;
   border-radius: 50%;
   transition: ease-in 400ms;
+  z-index: 2;
   @media (min-width: $sm) and (max-width: $md) {
     bottom: 20px;
     left: 20px;

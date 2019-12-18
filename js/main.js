@@ -3,16 +3,15 @@
 (function() {
   document.body.onload = () => {
     setTimeout(() => {
-      const preloader = document.querySelector('.preloader');
-      if(!preloader.classList.contains('done')) {
-        return preloader.classList.add('done')
+      const preloader = document.querySelector(".preloader");
+      if (!preloader.classList.contains("done")) {
+        return preloader.classList.add("done");
       }
-    }, 1000)
-  }
+    }, 1000);
+  };
 })();
 
 /* ********** preloader ********** */
-
 
 /* ********** hamburger menu ********** */
 
@@ -45,7 +44,8 @@
 
     if (
       target.classList.contains("menu-fog") ||
-      target.classList.contains("hamburger-menu__link")
+      target.classList.contains("hamburger-menu__link") ||
+      target.classList.contains("nav-bar__logo")
     ) {
       hamburgerBtn.classList.remove("is-active");
       toggleHamburgerMenu();
@@ -117,27 +117,25 @@ function closeModal(el) {
 
 (function() {
   function backToTop() {
-    const btn = $('.to-top');
+    const btn = $(".to-top");
 
     btn.fadeOut(0);
 
-    $(window).on('scroll', () => {
-      if($(this).scrollTop() <= 400) {
+    $(window).on("scroll", () => {
+      if ($(this).scrollTop() <= 400) {
         btn.fadeOut();
       } else {
         btn.fadeIn();
       }
     });
 
-    btn.addEventListener('click', (e) => {
+    btn.addEventListener("click", e => {
       e.preventDefault();
-      $('html').animate({scrollTop: 0}, 1000)
-    })
+      $("html").animate({ scrollTop: 0 }, 1000);
+    });
   }
 
   backToTop();
 })();
 
 /* ********** to-top button ********** */
-
-
