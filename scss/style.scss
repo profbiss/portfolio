@@ -442,8 +442,12 @@ $fog: rgba(0, 0, 0, 0.5);
   }
   &__card {
     position: relative;
+    height: 298px;
     overflow: hidden;
     z-index: 2;
+    @media (min-width: $sm) {
+      height: auto;
+    }
     &:hover .works__img {
       transform: scale(1.2);
     }
