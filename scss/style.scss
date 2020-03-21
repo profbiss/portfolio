@@ -505,33 +505,64 @@ $fog: rgba(0, 0, 0, 0.5);
 
 .skills {
   &__card-box {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 20px;
+    display: flex;
+    justify-content: space-between;
     margin-top: 80px;
-    @media (min-width: 270px) {
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    @media(max-width: $sm) {
+      margin-top: 50px;
+    }
+  }
+  &__row {
+    display: flex;
+    flex-direction: column;
+    max-width: 32%;
+    @media(max-width: $md) {
+      max-width: 48%;
+    }
+  }
+  &__row-1 .skills-card {
+    &:nth-child(2) {
+      display: none;
+      @media(max-width: $md) {
+        display: block;
+      }
+    }
+  }
+  &__row-3 {
+    @media(max-width: $md) {
+      display: none;
     }
   }
 }
 
 .skills-card {
-  min-height: 240px;
   padding: 20px 30px;
   background-color: #f1f1f1;
-  &__icon {
-    margin-bottom: 10px;
-    font-size: 60px;
-    color: $green;
+  @media(max-width: $sm) {
+    padding: 20px 10px;
+  }
+  &:not(:last-child) {
+    margin-bottom: 20px;
   }
   &__title {
     margin-bottom: 20px;
     font-family: "Nunito-Bold", "Arial", "Helvetica", sans-serif;
     font-size: 20px;
     color: #1b1b1b;
+    @media(max-width: $sm) {
+      font-size: 16px;
+    }
   }
   &__desc {
     color: #1b1b1b;
+    line-height: 22px;
+    @media(max-width: $sm) {
+      font-size: 12px;
+    }
+    &_colored {
+      color: $green;
+      font-weight: 900;
+    }
   }
 }
 
