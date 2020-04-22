@@ -45,8 +45,6 @@ $(document).ready(function () {
         : void 0;
     });
 })();
-
-
 const modal = document.querySelector(".modal"),
   modalFog = document.querySelector(".fog");
 function showModal() {
@@ -62,12 +60,14 @@ function closeModal(o) {
 }
 document.addEventListener("click", closeModal),
   (function () {
-    const o = $(".to-top");
-    o.fadeOut(0),
-      $(window).on("scroll", () => {
-        $(this).scrollTop() <= 400 ? o.fadeOut() : o.fadeIn();
-      }),
-      o.addEventListener("click", (o) => {
-        o.preventDefault(), $("html").animate({ scrollTop: 0 }, 1e3);
+    $(window).on("scroll", () => {
+      if ($(this).scrollTop() <= 400) {
+        $(".to-top").removeAttr("style");
+      } else {
+        $(".to-top").attr("style", "display: flex;");
+      }
+    }),
+      $(".to-top").on("click", (e) => {
+        e.preventDefault(), $("html").animate({ scrollTop: 0 }, 1e3);
       });
   })();
