@@ -6,9 +6,7 @@ $(document).ready(() => {
 
   AOS.init({ once: !0 });
 
-  if ($(".to-top").offset().top <= 700) {
-    $(".to-top").attr("style", "display: none;");
-  }
+  $(".to-top").fadeOut(0);
   $(".hamburger").on("click", function () {
     return $(this).toggleClass("is-active"), toggleMenu();
   });
@@ -17,11 +15,7 @@ $(document).ready(() => {
     closeMenu(e);
   });
   $(window).on("scroll", () => {
-    if ($(this).scrollTop() <= 700) {
-      $(".to-top").attr("style", "display: none;");
-    } else {
-      $(".to-top").removeAttr("style");
-    }
+    $(this).scrollTop() <= 400 ? $(".to-top").fadeOut() : $(".to-top").fadeIn();
   });
   $(".to-top").on("click", (e) => {
     e.preventDefault(), $("html").animate({ scrollTop: 0 }, 1e3);
@@ -69,6 +63,4 @@ $(document).ready(() => {
         $(".fog").removeClass("modal-fog");
     }
   }
-
-  $(".form__btn").on("click", showModal);
 });
