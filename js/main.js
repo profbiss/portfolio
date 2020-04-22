@@ -6,6 +6,9 @@ $(document).ready(() => {
 
   AOS.init({ once: !0 });
 
+  if ($(".to-top").offset().top <= 700) {
+    $(".to-top").attr("style", "display: none;");
+  }
   $(".hamburger").on("click", function () {
     return $(this).toggleClass("is-active"), toggleMenu();
   });
@@ -14,10 +17,10 @@ $(document).ready(() => {
     closeMenu(e);
   });
   $(window).on("scroll", () => {
-    if ($(this).scrollTop() <= 400) {
-      $(".to-top").removeAttr("style");
+    if ($(this).scrollTop() <= 700) {
+      $(".to-top").attr("style", "display: none;");
     } else {
-      $(".to-top").attr("style", "display: flex;");
+      $(".to-top").removeAttr("style");
     }
   });
   $(".to-top").on("click", (e) => {
