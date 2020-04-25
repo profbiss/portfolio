@@ -1,3 +1,7 @@
+import * as $ from "jquery";
+import AOS from"aos";
+import 'aos/dist/aos.css';
+
 $(document).ready(() => {
   setTimeout(() => {
     if ($(".preloader").hasClass("done") === false)

@@ -4,8 +4,8 @@ const MiniCssExtractPugin = require("mini-css-extract-plugin");
 const CopyWebpackPlugin = require("copy-webpack-plugin");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const autoprefixer = require("autoprefixer");
-const OptimizationCssAssetsWebpackPlugin = require("optimize-css-assets-webpack-plugin");
-const TerserWebpackPugin = require("terser-webpack-plugin");
+const OptimizeCssAssetsWebpackPlugin = require("optimize-css-assets-webpack-plugin");
+const TerserWebpackPlugin = require("terser-webpack-plugin");
 
 const isDev = process.env.NODE_ENV === "development";
 const isProd = !isDev;
@@ -13,20 +13,19 @@ const isProd = !isDev;
 const optimization = () => {
   const config = {
     splitChunks: {
-      chunks: "all"
-    }
+      chunks: "all",
+    },
   };
 
   if (isProd) {
     config.minimizer = [
       new OptimizeCssAssetsWebpackPlugin(),
-      new TerserWebpackPlugin()
+      new TerserWebpackPlugin(),
     ];
   }
 
   return config;
 };
-
 
 module.exports = {
   entry: ["@babel/polyfill", "./entry.js"],
@@ -38,6 +37,24 @@ module.exports = {
       {
         test: /\.pug$/,
         use: "pug-loader",
+      },
+      {
+        test: /\.css$/,
+        use: [
+          {
+            loader: MiniCssExtractPugin.loader,
+            options: {
+              reloadAll: true,
+            },
+          },
+          "css-loader",
+          {
+            loader: "postcss-loader",
+            options: {
+              plugins: () => [autoprefixer],
+            },
+          },
+        ],
       },
       {
         test: /\.scss$/,
@@ -64,17 +81,17 @@ module.exports = {
         loader: {
           loader: "babel-loader",
           options: {
-            presets: ["@babel/preset-env"]
-          }
-        }
+            presets: ["@babel/preset-env"],
+          },
+        },
       },
       {
         test: /\.(png|jpg|svg|gif)$/,
-        use: ["file-loader"]
+        use: ["file-loader"],
       },
       {
         test: /\.(ttf|woff|woff2|eot)$/,
-        use: ["file-loader"]
+        use: ["file-loader"],
       },
     ],
   },
