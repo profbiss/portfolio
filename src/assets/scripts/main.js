@@ -3,11 +3,14 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 
 $(document).ready(() => {
-  setTimeout(() => {
-    if ($(".preloader").hasClass("done") === false)
-      return $(".preloader").addClass("done");
-  }, 1000);
-
+  document.addEventListener("DOMContentLoaded", function {
+    setTimeout(() => {
+      if ($(".preloader").hasClass("done") === false)
+        return $(".preloader").addClass("done");
+    }, 1000);
+  
+  })
+ 
   AOS.init({ once: !0 });
 
   const filterButtonsContainer = document.querySelector(".filter-buttons");
