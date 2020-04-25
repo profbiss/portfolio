@@ -10,6 +10,10 @@ $(document).ready(() => {
 
   AOS.init({ once: !0 });
 
+  const filterButtonsContainer = document.querySelector(".filter-buttons");
+  const filterButtons = document.querySelectorAll(".filter-buttons__button");
+  const works = document.querySelectorAll(".works__card");
+
   $(".to-top").fadeOut(0);
   $(".hamburger").on("click", function () {
     return $(this).toggleClass("is-active"), toggleMenu();
@@ -25,7 +29,7 @@ $(document).ready(() => {
       $(".to-top").fadeIn();
     }
   });
-  $("")
+  $(filterButtonsContainer).on("click", changeFilter);
   $(".to-top").on("click", (e) => {
     e.preventDefault(), $("html").animate({ scrollTop: 0 }, 1e3);
   });
@@ -44,6 +48,34 @@ $(document).ready(() => {
     );
   });
 
+  function changeFilter(e) {
+    if (e) {
+      e.preventDefault();
+      const target = e.target;
+      if (target.getAttribute("href") === "#") {
+        console.log("hi");
+        filterButtons.forEach((button, index) => {
+          button.classList.remove("filter-buttons__button_is-active");
+          button.setAttribute("href", "#");
+          if (button === target) {
+            button.classList.add("filter-buttons__button_is-active");
+            button.removeAttribute("href", "#");
+            switchWorksFilter(index);
+          }
+        });
+      }
+    }
+  }
+  function switchWorksFilter(index) {
+    works.forEach((work) => {
+      work.style = "display: block;";
+      if (index === 1 && work.classList.contains("app-card")) {
+        work.style = "display: none;";
+      } else if (index === 2 && work.classList.contains("site-card")) {
+        work.style = "display: none;";
+      }
+    });
+  }
   function toggleMenu() {
     $(".hamburger-menu__list").toggleClass("hamburger-menu__list_is-visible");
     $(".fog").toggleClass("menu-fog");
