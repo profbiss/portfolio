@@ -1,4 +1,4 @@
-import * as $ from "jquery";
+import $ from "jquery";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
@@ -19,7 +19,7 @@ $(document).ready(() => {
     closeMenu(e);
   });
   $(window).on("scroll", () => {
-    if ($(this).scrollTop() <= 400) {
+    if ($(window).scrollTop() <= 400) {
       $(".to-top").fadeOut();
     } else {
       $(".to-top").fadeIn();
