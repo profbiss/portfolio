@@ -3,6 +3,7 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPugin = require("mini-css-extract-plugin");
 const CopyWebpackPlugin = require("copy-webpack-plugin");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
+const autoprefixer = require("autoprefixer");
 
 module.exports = {
   entry: "./entry.js",
@@ -14,18 +15,6 @@ module.exports = {
         use: "pug-loader",
       },
       {
-        test: /\.css$/,
-        use: [
-          {
-            loader: MiniCssExtractPugin.loader,
-            options: {
-              reloadAll: true,
-            },
-          },
-          "css-loader",
-        ],
-      },
-      {
         test: /\.scss$/,
         use: [
           {
@@ -35,6 +24,12 @@ module.exports = {
             },
           },
           "css-loader",
+          {
+            loader: "postcss-loader",
+            options: {
+              plugins: () => [autoprefixer],
+            },
+          },
           "sass-loader",
         ],
       },
@@ -63,8 +58,8 @@ module.exports = {
     ]),
     new CleanWebpackPlugin(),
     new MiniCssExtractPugin({
-      filename: "[name].css"
-    })
+      filename: "[name].css",
+    }),
   ],
   output: {
     filename: "[name].js",
