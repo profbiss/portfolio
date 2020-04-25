@@ -4,10 +4,35 @@ const MiniCssExtractPugin = require("mini-css-extract-plugin");
 const CopyWebpackPlugin = require("copy-webpack-plugin");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const autoprefixer = require("autoprefixer");
+const OptimizationCssAssetsWebpackPlugin = require("optimize-css-assets-webpack-plugin");
+const TerserWebpackPugin = require("terser-webpack-plugin");
+
+const isDev = process.env.NODE_ENV === "development";
+const isProd = !isDev;
+
+const optimization = () => {
+  const config = {
+    splitChunks: {
+      chunks: "all"
+    }
+  };
+
+  if (isProd) {
+    config.minimizer = [
+      new OptimizeCssAssetsWebpackPlugin(),
+      new TerserWebpackPlugin()
+    ];
+  }
+
+  return config;
+};
+
 
 module.exports = {
-  entry: "./entry.js",
+  entry: ["@babel/polyfill", "./entry.js"],
   context: path.resolve(__dirname, "src"),
+  optimization: optimization(),
+  devtool: isDev ? "sourse-map" : "",
   module: {
     rules: [
       {
@@ -33,13 +58,31 @@ module.exports = {
           "sass-loader",
         ],
       },
+      {
+        test: /\.js$/,
+        exclude: /node_modules/,
+        loader: {
+          loader: "babel-loader",
+          options: {
+            presets: ["@babel/preset-env"]
+          }
+        }
+      },
+      {
+        test: /\.(png|jpg|svg|gif)$/,
+        use: ["file-loader"]
+      },
+      {
+        test: /\.(ttf|woff|woff2|eot)$/,
+        use: ["file-loader"]
+      },
     ],
   },
   plugins: [
     new HtmlWebpackPlugin({
       template: "./index.pug",
       minify: {
-        collapseWhitespace: true,
+        collapseWhitespace: isProd,
       },
     }),
     new CopyWebpackPlugin([
