@@ -25,6 +25,7 @@ $(document).ready(() => {
       $(".to-top").fadeIn();
     }
   });
+  $("")
   $(".to-top").on("click", (e) => {
     e.preventDefault(), $("html").animate({ scrollTop: 0 }, 1e3);
   });
