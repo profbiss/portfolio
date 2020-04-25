@@ -3,7 +3,7 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 
 $(document).ready(() => {
-  document.addEventListener("DOMContentLoaded", function {
+  document.addEventListener("DOMContentLoaded", function() {
     setTimeout(() => {
       if ($(".preloader").hasClass("done") === false)
         return $(".preloader").addClass("done");
