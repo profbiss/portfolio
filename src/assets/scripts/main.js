@@ -1,6 +1,6 @@
 import * as $ from "jquery";
-import AOS from"aos";
-import 'aos/dist/aos.css';
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 $(document).ready(() => {
   setTimeout(() => {
@@ -19,7 +19,11 @@ $(document).ready(() => {
     closeMenu(e);
   });
   $(window).on("scroll", () => {
-    $(this).scrollTop() <= 400 ? $(".to-top").fadeOut() : $(".to-top").fadeIn();
+    if ($(this).scrollTop() <= 400) {
+      $(".to-top").fadeOut();
+    } else {
+      $(".to-top").fadeIn();
+    }
   });
   $(".to-top").on("click", (e) => {
     e.preventDefault(), $("html").animate({ scrollTop: 0 }, 1e3);
