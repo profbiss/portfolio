@@ -37,6 +37,7 @@ body {
   -ms-text-size-adjust: 100%;
   -moz-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='4' height='4' viewBox='0 0 4 4'%3E%3Cpath fill='%23808080' fill-opacity='0.38' d='M1 3h1v1H1V3zm2-2h1v1H3V1z'%3E%3C/path%3E%3C/svg%3E");
 }
 input,
 button,
@@ -592,7 +593,6 @@ $fog: rgba(0, 0, 0, 0.5);
   &__portfolio {
     padding-top: 100px;
     padding-bottom: 100px;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='4' height='4' viewBox='0 0 4 4'%3E%3Cpath fill='%23808080' fill-opacity='0.38' d='M1 3h1v1H1V3zm2-2h1v1H3V1z'%3E%3C/path%3E%3C/svg%3E");
   }
   &__contacts {
     padding-top: 100px;
@@ -604,12 +604,81 @@ $fog: rgba(0, 0, 0, 0.5);
 
 /* ********** main styles ********** */
 
+/* ********** about-me styles ********** */
+
+.about-me {
+  display: flex;
+  &__about-me,
+  &__skills {
+    padding-top: 70px;
+    padding-bottom: 70px;
+  }
+  &__about-me {
+    position: relative;
+    flex-basis: 50%;
+    padding-right: 40px;
+    text-align: right;
+    color: #ffffff;
+    background-color: #1b1b1b;
+    &:after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      right: -2px;
+      width: 4px;
+      height: 300px;
+      background-color: $green;
+      transform: translateY(-50%);
+    }
+  }
+  &__desc {
+    max-width: 350px;
+    margin-left: auto;
+    margin-bottom: 10px;
+  }
+  &__link {
+    display: inline-block;
+    margin-top: 20px;
+    font-size: 14px;
+    color: $green;
+    transition: 400ms;
+    &:hover {
+      color: #15dab2;
+    }
+  }
+  &__skills {
+    flex-basis: 50%;
+    padding-left: 40px;
+    text-align: left;
+  }
+  &__first-title,
+  &__second-title {
+    margin-bottom: 30px;
+    font-size: 35px;
+  }
+  &__list {
+    padding-left: 16px;
+  }
+  &__item {
+    list-style: circle;
+    &:not(:last-child) {
+      margin-bottom: 10px;
+    }
+  }
+}
+
+/* ********** about-me styles ********** */
+
 /* ********** portfolio styles ********** */
 
 .filter-buttons {
   display: flex;
+  justify-content: center;
   height: 25px;
   margin-top: 20px;
+  @media (min-width: $sm) {
+    justify-content: flex-start;
+  }
   &__wrap {
     display: flex;
     border: 1px solid $green;
@@ -619,11 +688,14 @@ $fog: rgba(0, 0, 0, 0.5);
     display: flex;
     justify-content: center;
     align-items: center;
-    min-width: 120px;
+    min-width: 90px;
     height: 100%;
     color: #1d1d1d;
     background-color: transparent;
     transition: 400ms;
+    @media (min-width: $sm) {
+      min-width: 120px;
+    }
     &:hover {
       color: #ffffff;
       background-color: $green;

@@ -25,7 +25,7 @@ html(lang='ru')
             img.nav-bar__logo(src='logo.png', alt='Logotype')
           ul.nav-bar__list
             li.nav-bar__item
-              a.nav-bar__link(href='#skills') Обо мне
+              a.nav-bar__link(href='#about-me') Обо мне
             li.nav-bar__item
               a.nav-bar__link(href='#portfolio') Мои работы
             li.nav-bar__item
@@ -36,7 +36,7 @@ html(lang='ru')
           .nav-bar__hamburger-menu.hamburger-menu.hamburger-menu_is-visible
             ul.hamburger-menu__list
               li.hamburger-menu__item
-                a.hamburger-menu__link(href='#skills') Обо мне
+                a.hamburger-menu__link(href='#about-me') Обо мне
               li.hamburger-menu__item
                 a.hamburger-menu__link(href='#portfolio') Мои работы
               li.hamburger-menu__item
@@ -67,6 +67,26 @@ html(lang='ru')
               a.header__link(target='_blank', href='https://www.linkedin.com/in/a-maximchik/')
                 i.fab.fa-linkedin
     main.main
+      a#about-me
+      section.main__about-me.about-me
+        .about-me__about-me
+          h3.about-me__first-title Обо мне
+          p.about-me__desc Занимаюсь разработкой адаптивных и кроссбраузерных веб-сайтов и приложений. 
+          p.about-me__desc Беспрерывно развиваюсь в направлении frontend-разработки. Изучаю новые технологии и способы их применения на практике. На данный момент совершенствую знания нативного JavaScript и фреймворка Vue.js.
+          p.about-me__desc Обладаю хорошими навыками коммуникации, веду активный образ жизни, умею соблюдать сроки и стоически относиться к трудностям.
+          a.about-me__link(href="#") СКАЧАТЬ РЕЗЮМЕ
+        .about-me__skills
+          h3.about-me__second-title Навыки
+          ul.about-me__list
+            li.about-me__item HTML5
+            li.about-me__item CSS3
+            li.about-me__item JavaScript
+            li.about-me__item Vue.js / Vuex / Vue Router
+            li.about-me__item Webpack
+            li.about-me__item PUG / SCSS
+            li.about-me__item Git
+            li.about-me__item БЭМ
+            li.about-me__item Базовые знания: PHP / ООП
       a#portfolio
       section.main__portfolio.side-padding
         .portfolio.container
