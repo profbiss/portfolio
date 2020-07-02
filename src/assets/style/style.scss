@@ -100,7 +100,7 @@ $fog: rgba(0, 0, 0, 0.5);
 }
 
 .container {
-  max-width: 1140px;
+  max-width: 1340px;
   margin: auto;
 }
 
@@ -614,35 +614,26 @@ $fog: rgba(0, 0, 0, 0.5);
 
 .filter-buttons {
   display: flex;
-  margin: 50px auto 10px 0;
+  height: 25px;
+  margin-top: 20px;
   &__wrap {
     display: flex;
-    justify-content: flex-start;
+    border: 1px solid $green;
+    border-radius: 4px;
   }
   &__button {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 3px 7px;
-    color: #1b1b1b;
-    border: 1px solid $green;
-    transition: 300ms;
-    &_is-active {
-      background-color: $green;
-      color: #ffffff;
-      cursor: default;
-    }
+    min-width: 120px;
+    height: 100%;
+    transition: 400ms;
     &:hover {
-      background-color: $green;
       color: #ffffff;
+      background-color: $green;
     }
-    &:first-child {
-      border-right: none;
-      border-radius: 4px 0 0 4px;
-    }
-    &:last-child {
-      border-left: none;
-      border-radius: 0 4px 4px 0;
+    &:not(:last-child) {
+      border-right: 1px solid $green;
     }
   }
 }
@@ -653,63 +644,6 @@ $fog: rgba(0, 0, 0, 0.5);
   gap: 20px;
   @media (min-width: $sm) {
     grid-template-columns: repeat(2, 1fr);
-  }
-  &__card {
-    position: relative;
-    overflow: hidden;
-    z-index: 2;
-    &:hover .works__img {
-      transform: scale(1.2);
-    }
-    &:hover .works__desc {
-      top: 70%;
-      visibility: visible;
-    }
-    &:hover .works__dark-card {
-      background-color: transparent;
-      visibility: hidden;
-    }
-  }
-  &__dark-card {
-    position: absolute;
-    background-color: $fog;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    display: none;
-    z-index: 2;
-    @media (min-width: $md) {
-      display: block;
-      transition: 400ms;
-    }
-  }
-  &__img {
-    width: 100%;
-    transition: 400ms;
-  }
-  &__desc {
-    position: absolute;
-    top: 70%;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 10px;
-    font-size: 18px;
-    color: #ffffff;
-    background-color: #1b1b1b;
-    transition: 400ms;
-    @media (min-width: $md) {
-      top: 100%;
-      background-color: $fog;
-      visibility: hidden;
-    }
-    &:hover {
-      color: $green;
-    }
   }
 }
 
