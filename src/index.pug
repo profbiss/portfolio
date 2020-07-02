@@ -11,13 +11,13 @@ html(lang='ru')
     .fog
     .preloader
       <div class="loader">
-          <div class="l_main">
-            <div class="l_square"><span></span><span></span><span></span></div>
-            <div class="l_square"><span></span><span></span><span></span></div>
-            <div class="l_square"><span></span><span></span><span></span></div>
-            <div class="l_square"><span></span><span></span><span></span></div>
-          </div>
-          </div>
+        <div class="l_main">
+          <div class="l_square"><span></span><span></span><span></span></div>
+          <div class="l_square"><span></span><span></span><span></span></div>
+          <div class="l_square"><span></span><span></span><span></span></div>
+          <div class="l_square"><span></span><span></span><span></span></div>
+        </div>
+        </div>
     header.header.side-padding
       nav.nav-bar.side-padding
         .nav-bar__content.container
@@ -25,9 +25,9 @@ html(lang='ru')
             img.nav-bar__logo(src='logo.png', alt='Logotype')
           ul.nav-bar__list
             li.nav-bar__item
-              a.nav-bar__link(href='#portfolio') Мои работы
+              a.nav-bar__link(href='#skills') Обо мне
             li.nav-bar__item
-              a.nav-bar__link(href='#skills') Навыки
+              a.nav-bar__link(href='#portfolio') Мои работы
             li.nav-bar__item
               a.nav-bar__link(href='#connection') Обратная связь
           .hamburger.hamburger--minus
@@ -36,9 +36,9 @@ html(lang='ru')
           .nav-bar__hamburger-menu.hamburger-menu.hamburger-menu_is-visible
             ul.hamburger-menu__list
               li.hamburger-menu__item
-                a.hamburger-menu__link(href='#portfolio') Мои работы
+                a.hamburger-menu__link(href='#skills') Обо мне
               li.hamburger-menu__item
-                a.hamburger-menu__link(href='#skills') Навыки
+                a.hamburger-menu__link(href='#portfolio') Мои работы
               li.hamburger-menu__item
                 a.hamburger-menu__link(href='#connection') Обратная связь
       .header__container.container
@@ -77,56 +77,58 @@ html(lang='ru')
               a.filter-buttons__button(href="#") сайты
               a.filter-buttons__button(href="#") приложения
           .portfolio__works.works
-
-      a#skills
-      section.main__skills.side-padding
-        .skills.container
-          h2.skills__title.section-title Навыки
-          .skills__card-box
-            .skills__row.skills__row-1
-              .skills__skills-card.skills-card(data-aos='fade-up', data-aos-duration='1000')
-                h3.skills-card__title HTML5
-                p.skills-card__desc
-                  | Делаю валидную и семантическую разметку веб-страницы с
-                  | правильной структурой документа. Для удобочитаемости кода и
-                  | ускорения вёрстки использую шаблонизатор 
-                  span.skills-card__desc_colored PUG
-                  | .
-              .skills__skills-card.skills-card(data-aos='fade-up', data-aos-duration='1000')
-                h3.skills-card__title JavaScript
-                p.skills-card__desc
-                  | Для создания интерактива на сайте использую язык
-                  | программирования JavaScript и библиотеку 
-                  span.skills-card__desc_colored jQuery
-                  | .
-              .skills__skills-card.skills-card(data-aos='fade-up', data-aos-duration='1000')
-                h3.skills-card__title Webpack
-                p.skills-card__desc
-                  | Для компиляции и минификации кода, а так же сборки готового
-                  | проекта использую сборщик Webpack.
-            .skills__row.skills__row-2
-              .skills__skills-card.skills-card(data-aos='fade-up', data-aos-duration='1000')
-                h3.skills-card__title CSS3
-                p.skills-card__desc
-                  | Стилизую веб-страницы с помощью каскадных таблиц стилей.
-                  | Использую технологии Grid, Flexbox, а так же медиа-запросы для
-                  | создания адаптивной вёрстки. Для ускорения написания кода
-                  | использую препроцессор 
-                  span.skills-card__desc_colored SASS
-                  | .
-              .skills__skills-card.skills-card(data-aos='fade-up', data-aos-duration='1000')
-                h3.skills-card__title БЭМ
-                p.skills-card__desc
-                  | Применяю в вёрстке БЭМ-методологию (именование классов) для
-                  | удобочитаемого кода.
-            .skills__row.skills__row-3
-              .skills__skills-card.skills-card(data-aos='fade-up', data-aos-duration='1000')
-                h3.skills-card__title JavaScript
-                p.skills-card__desc
-                  | Для создания интерактива на сайте использую язык
-                  | программирования JavaScript и библиотеку 
-                  span.skills-card__desc_colored jQuery
-                  | .
+            a.works__work.work(href="#" data-aos='fade-up', data-aos-duration='1000')
+              img.work__photo(src="work-13.png", alt="News App")
+              .work__footer
+                span.work__description News App
+            a.works__work.work(href="#" data-aos='fade-up', data-aos-duration='1000')
+              img.work__photo(src="work-12.png", alt="Borodinsky")
+              .work__footer
+                span.work__description Borodinsky Barbershop
+            a.works__work.work(href="#" data-aos='fade-up', data-aos-duration='1000')
+              img.work__photo(src="work-11.png", alt="To Do list")
+              .work__footer
+                span.work__description To Do List App
+            a.works__work.work(href="#" data-aos='fade-up', data-aos-duration='1000')
+              img.work__photo(src="work-10.png", alt="Lian agency")
+              .work__footer
+                span.work__description Lian Creative Agency
+            a.works__work.work(href="#" data-aos='fade-up', data-aos-duration='1000')
+              img.work__photo(src="work-9.png", alt="Giant")
+              .work__footer
+                span.work__description Giant Test Page
+            a.works__work.work(href="#" data-aos='fade-up', data-aos-duration='1000')
+              img.work__photo(src="work-8.png", alt="Marthas portfolio")
+              .work__footer
+                span.work__description Tattoo Master Portfolio
+            a.works__work.work(href="#" data-aos='fade-up', data-aos-duration='1000')
+              img.work__photo(src="work-7.png", alt="Specsintez")
+              .work__footer
+                span.work__description Specsintez Main Page Prototype
+            a.works__work.work(href="#" data-aos='fade-up', data-aos-duration='1000')
+              img.work__photo(src="work-6.png", alt="Uptrader")
+              .work__footer
+                span.work__description UpTrader Test Page
+            a.works__work.work(href="#" data-aos='fade-up', data-aos-duration='1000')
+              img.work__photo(src="work-5.png", alt="Skokov")
+              .work__footer
+                span.work__description Skokov Consulting Agency
+            a.works__work.work(href="#" data-aos='fade-up', data-aos-duration='1000')
+              img.work__photo(src="work-4.png", alt="Elegant")
+              .work__footer
+                span.work__description Elegant Portfolio
+            a.works__work.work(href="#" data-aos='fade-up', data-aos-duration='1000')
+              img.work__photo(src="work-3.png", alt="Basketball&Life")
+              .work__footer
+                span.work__description Basketball & Life
+            a.works__work.work(href="#" data-aos='fade-up', data-aos-duration='1000')
+              img.work__photo(src="work-2.png", alt="Let us make")
+              .work__footer
+                span.work__description Logo Agency
+            a.works__work.work(href="#" data-aos='fade-up', data-aos-duration='1000')
+              img.work__photo(src="work-1.png", alt="Tajam")
+              .work__footer
+                span.work__description Tajam Agency
       a#connection
       section.main__contacts.side-padding
         .contacts.container

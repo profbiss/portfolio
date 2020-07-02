@@ -592,13 +592,7 @@ $fog: rgba(0, 0, 0, 0.5);
   &__portfolio {
     padding-top: 100px;
     padding-bottom: 100px;
-    background-color: #ffffff;
-  }
-  &__skills {
-    padding-top: 100px;
-    padding-bottom: 100px;
-    background-color: #ffffff;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='4' height='4' viewBox='0 0 4 4'%3E%3Cpath fill='%23808080' fill-opacity='0.38' d='M1 3h1v1H1V3zm2-2h1v1H3V1z'%3E%3C/path%3E%3C/svg%3E");
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='4' height='4' viewBox='0 0 4 4'%3E%3Cpath fill='%23808080' fill-opacity='0.38' d='M1 3h1v1H1V3zm2-2h1v1H3V1z'%3E%3C/path%3E%3C/svg%3E")
   }
   &__contacts {
     padding-top: 100px;
@@ -627,6 +621,7 @@ $fog: rgba(0, 0, 0, 0.5);
     align-items: center;
     min-width: 120px;
     height: 100%;
+    color: #1d1d1d;
     transition: 400ms;
     &:hover {
       color: #ffffff;
@@ -640,81 +635,40 @@ $fog: rgba(0, 0, 0, 0.5);
 
 .works {
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
   gap: 20px;
-  @media (min-width: $sm) {
-    grid-template-columns: repeat(2, 1fr);
+  margin-top: 20px;
+  @media(min-width: $md) {
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  }
+}
+
+.work {
+  box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.5);
+  &:hover .work__footer {
+    background-color: $green;
+    color: #ffffff;
+  }
+  &__photo {
+    max-width: 100%;
+  }
+  &__footer {
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+    height: 40px;
+    font-size: 14px;
+    font-weight: 600;
+    color: #1b1b1b;
+    background-color: #f1f1f1;
+    transition: 400ms;
+    @media(min-width: $md) {
+      font-size: 16px;
+    }
   }
 }
 
 /* ********** portfolio styles ********** */
-
-/* ********** skills styles ********** */
-
-.skills {
-  &__card-box {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 80px;
-    @media (max-width: $sm) {
-      margin-top: 50px;
-    }
-  }
-  &__row {
-    display: flex;
-    flex-direction: column;
-    max-width: 32%;
-    @media (max-width: $md) {
-      max-width: 48%;
-    }
-  }
-  &__row-1 .skills-card {
-    &:nth-child(2) {
-      display: none;
-      @media (max-width: $md) {
-        display: block;
-      }
-    }
-  }
-  &__row-3 {
-    @media (max-width: $md) {
-      display: none;
-    }
-  }
-}
-
-.skills-card {
-  padding: 20px 30px;
-  background-color: #f1f1f1;
-  @media (max-width: $sm) {
-    padding: 20px 10px;
-  }
-  &:not(:last-child) {
-    margin-bottom: 20px;
-  }
-  &__title {
-    margin-bottom: 20px;
-    font-family: "Nunito-Bold", "Arial", "Helvetica", sans-serif;
-    font-size: 20px;
-    color: #1b1b1b;
-    @media (max-width: $sm) {
-      font-size: 16px;
-    }
-  }
-  &__desc {
-    color: #1b1b1b;
-    line-height: 22px;
-    @media (max-width: $sm) {
-      font-size: 12px;
-    }
-    &_colored {
-      color: $green;
-      font-weight: 900;
-    }
-  }
-}
-
-/* ********** skills styles ********** */
 
 /* ********** contacts styles ********** */
 
