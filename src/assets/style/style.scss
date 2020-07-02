@@ -649,6 +649,7 @@ $fog: rgba(0, 0, 0, 0.5);
 }
 
 .work {
+  border-radius: 4px;
   box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.5);
   &:hover .work__footer {
     background-color: $green;
@@ -656,6 +657,7 @@ $fog: rgba(0, 0, 0, 0.5);
   }
   &__photo {
     max-width: 100%;
+    border-radius: 4px 4px 0 0;
   }
   &__footer {
     display: flex;
@@ -666,6 +668,7 @@ $fog: rgba(0, 0, 0, 0.5);
     font-weight: 600;
     color: #1b1b1b;
     background-color: #f1f1f1;
+    border-radius: 0 0 4px 4px;
     transition: 400ms;
     @media (min-width: $md) {
       font-size: 16px;
