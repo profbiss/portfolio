@@ -1,6 +1,8 @@
 const btns = document.querySelectorAll(".filter-buttons__button");
 const works = document.querySelectorAll(".work");
 
+onFilterButton(btns[0]);
+
 btns.forEach((button) =>
   button.addEventListener("click", (e) => {
     e.preventDefault;
