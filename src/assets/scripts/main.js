@@ -1,7 +1,7 @@
 import $ from "jquery";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import works from "./works"
+import works from "./works";
 
 $(document).ready(() => {
   setTimeout(() => {
@@ -28,20 +28,6 @@ $(document).ready(() => {
   });
   $(".to-top").on("click", (e) => {
     e.preventDefault(), $("html").animate({ scrollTop: 0 }, 1e3);
-  });
-  $(".form").submit(function () {
-    var o = $(this);
-    return (
-      $.ajax({ type: "POST", url: "mail.php", data: o.serialize() }).done(
-        function () {
-          showModal(),
-            setTimeout(function () {
-              o.trigger("reset");
-            }, 1e3);
-        }
-      ),
-      !1
-    );
   });
   function toggleMenu() {
     $(".hamburger-menu__list").toggleClass("hamburger-menu__list_is-visible");
