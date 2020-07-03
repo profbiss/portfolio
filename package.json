@@ -48,7 +48,6 @@
     "webpack-dev-server": "^3.11.0"
   },
   "dependencies": {
-    "aos": "^2.3.4",
     "firebase": "^7.15.5",
     "jquery": "^3.5.0"
   }

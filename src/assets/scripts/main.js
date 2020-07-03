@@ -1,6 +1,4 @@
 import $ from "jquery";
-import AOS from "aos";
-import "aos/dist/aos.css";
 import "./works";
 import "./form";
 
@@ -9,8 +7,6 @@ $(document).ready(() => {
     if ($(".preloader").hasClass("done") === false)
       return $(".preloader").addClass("done");
   }, 1000);
-
-  AOS.init({ once: !0 });
 
   $(".to-top").fadeOut(0);
   $(".hamburger").on("click", function () {
