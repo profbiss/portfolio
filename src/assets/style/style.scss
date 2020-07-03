@@ -517,8 +517,11 @@ $fog: rgba(0, 0, 0, 0.5);
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 200px 0;
+    padding: 200px 0 100px 0;
     text-align: center;
+    @media(min-width: $sm) {
+      padding-bottom: 200px;
+    }
     @media (min-width: $md) {
       flex-direction: row;
       text-align: left;
@@ -608,15 +611,24 @@ $fog: rgba(0, 0, 0, 0.5);
 
 .about-me {
   display: flex;
+  flex-direction: column;
+  @media(min-width: $sm) {
+    flex-direction: row;
+  }
   &__about-me,
   &__skills {
-    padding-top: 70px;
-    padding-bottom: 70px;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    @media(min-width: $sm) {
+      padding-top: 70px;
+      padding-bottom: 70px;
+    }
   }
   &__about-me {
     position: relative;
     flex-basis: 50%;
     padding-right: 40px;
+    padding-left: 13px;
     text-align: right;
     color: #ffffff;
     background-color: #1b1b1b;
@@ -625,10 +637,17 @@ $fog: rgba(0, 0, 0, 0.5);
       position: absolute;
       top: 50%;
       right: -2px;
+      display: none;
       width: 4px;
-      height: 320px;
+      height: 390px;
       background-color: $green;
       transform: translateY(-50%);
+      @media(min-width: $sm) {
+        display: block;
+      }
+      @media(min-width: $md) {
+        height: 320px;
+      }
     }
   }
   &__desc {
@@ -648,6 +667,7 @@ $fog: rgba(0, 0, 0, 0.5);
   }
   &__skills {
     flex-basis: 50%;
+    padding-right: 13px;
     padding-left: 40px;
     text-align: left;
   }
