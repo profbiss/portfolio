@@ -1,4 +1,5 @@
 import * as firebase from "firebase";
+import fog from "./main";
 
 var firebaseConfig = {
   apiKey: "AIzaSyAfJ2T5juKyIxz3rgTCetzd2XcxMs4bZgs",
@@ -15,7 +16,6 @@ firebase.initializeApp(firebaseConfig);
 
 let database = firebase.database();
 const modal = document.querySelector(".modal");
-const fog = document.querySelector(".fog");
 
 document
   .getElementById("feedbackForm")
