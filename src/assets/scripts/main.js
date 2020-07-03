@@ -1,7 +1,8 @@
 import $ from "jquery";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import works from "./works";
+import "./works";
+import "./form";
 
 $(document).ready(() => {
   setTimeout(() => {
@@ -16,7 +17,6 @@ $(document).ready(() => {
     return $(this).toggleClass("is-active"), toggleMenu();
   });
   $(document).on("click", function (e) {
-    closeModal(e);
     closeMenu(e);
   });
   $(window).on("scroll", () => {
@@ -41,20 +41,6 @@ $(document).ready(() => {
       ($(target).hasClass("nav-bar__logo") && $(".fog").hasClass("menu-fog"))
     ) {
       $(".hamburger").removeClass("is-active"), toggleMenu();
-    }
-  }
-  function showModal() {
-    $(".modal").toggleClass("modal_visible");
-    $(".fog").toggleClass("modal-fog");
-  }
-  function closeModal(e) {
-    const target = e.target;
-    if (
-      $(target).hasClass("modal_visible") ||
-      $(target).hasClass("modal-fog")
-    ) {
-      $(".modal").removeClass("modal_visible"),
-        $(".fog").removeClass("modal-fog");
     }
   }
 });

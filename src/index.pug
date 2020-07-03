@@ -152,12 +152,12 @@ html(lang='ru')
       a#connection
       section.main__contacts.side-padding
         .contacts.container
-          form.contacts__form.form(action="#" method="POST")
+          form.contacts__form.form(action="#" id="feedbackForm")
             h3.form__title Обратная связь
             .form__about-user
-              input.form__name(type='text', name='name', placeholder='Ваше имя', required='')
-              input.form__email(type='email', name='e-mail', placeholder='Ваш e-mail', required='')
-            textarea.form__textarea(name='message', cols='30', rows='10', placeholder='Ваше сообщение', required='')
+              input.form__name(type='text', name='name', placeholder='Ваше имя', required='' id="name")
+              input.form__email(type='email', name='e-mail', placeholder='Ваш e-mail', required='' id="email")
+            textarea.form__textarea(name='message', cols='30', rows='10', placeholder='Ваше сообщение', required='' id='message')
             button.form__btn(type='submit') Отправить
     footer.footer.side-padding
       .footer__footer-content.footer-contentcontainer
