@@ -7,6 +7,7 @@ hamburgerBtn.addEventListener("click", () => {
   hamburgerBtn.classList.toggle("is-active");
   toggleMenu();
 });
+
 document.addEventListener("click", (e) => {
   closeMenu(e);
 });
