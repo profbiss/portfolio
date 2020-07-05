@@ -810,14 +810,28 @@ $green-fog: #1abc9caa;
     justify-content: center;
     align-items: center;
     height: 100%;
+    min-width: 45px;
     width: 100%;
     border-left: 1px solid #b1b1b1;
     transition: 400ms;
-    &:hover {
+    &_is-active {
       background-color: $green;
+      border-radius: 0 0 4px 0;
       & .work__button-inner {
         background-color: #ffffff;
-        &:after, &:before {
+        &:after,
+        &:before {
+          background-color: #ffffff;
+        }
+      }
+    }
+    &:hover {
+      background-color: $green;
+      border-radius: 0 0 4px 0;
+      & .work__button-inner {
+        background-color: #ffffff;
+        &:after,
+        &:before {
           background-color: #ffffff;
         }
       }
@@ -831,7 +845,7 @@ $green-fog: #1abc9caa;
     background-color: #1b1b1b;
     transition: 400ms;
     &:before {
-      content: '';
+      content: "";
       position: absolute;
       top: 9px;
       display: block;
@@ -842,7 +856,7 @@ $green-fog: #1abc9caa;
       transition: 400ms;
     }
     &:after {
-      content: '';
+      content: "";
       position: absolute;
       bottom: 9px;
       display: block;
