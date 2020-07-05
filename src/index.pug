@@ -97,10 +97,15 @@ html(lang='ru')
               button.filter-buttons__button#site сайты
               button.filter-buttons__button#app приложения
           .portfolio__works.works
-            a.works__work.work.app(href="https://darth-tesla.github.io/news-app/" target="_blank" )
-              img.work__photo(src="work-13.png", alt="News App")
+            div.works__work.work.app
+              .work__content
+                .work__fog-wrap
+                  .work__fog
+                img.work__photo(src="work-13.png", alt="News App")
               .work__footer
-                span.work__description News App
+                a.work__link(href="https://darth-tesla.github.io/news-app/" target="_blank") News App
+                a.work__button(href="#")
+                  span.work__button-inner
             a.works__work.work.site(href="https://darth-tesla.github.io/barbershop/"  target="_blank")
               img.work__photo(src="work-12.png", alt="Borodinsky")
               .work__footer
