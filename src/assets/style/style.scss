@@ -85,7 +85,7 @@ $md: 768px;
 $lg: 992px;
 $green: #1abc9c;
 $fog: rgba(0, 0, 0, 0.5);
-$green-fog: #1abc9caa;
+$green-fog: #1abc9cee;
 
 /* ********** variables ********** */
 
@@ -765,6 +765,9 @@ $green-fog: #1abc9caa;
     margin-top: 400px;
     height: 100%;
     width: 100%;
+    padding: 15px;
+    text-align: left;
+    color: #ffffff;
     border-radius: 4px 4px 0 0;
     background-color: $green-fog;
     transition: 400ms;
@@ -788,6 +791,20 @@ $green-fog: #1abc9caa;
     transition: 400ms;
     @media (min-width: $md) {
       font-size: 16px;
+    }
+  }
+  &__title {
+    margin-bottom: 10px;
+    font-weight: 700;
+    font-size: 22px;
+  }
+  &__list {
+    padding-left: 16px;
+  }
+  &__item {
+    list-style: disc;
+    &:not(:last-child) {
+      margin-bottom: 7px;
     }
   }
   &__link {
